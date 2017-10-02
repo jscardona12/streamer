@@ -90,16 +90,8 @@ function stream(id) {
 }
 
 function showMyFace() {
-    navigator.mediaDevices.getUserMedia({audio: true, video: true})
-        .then(function (stream) {
+    navigator.getUserMedia({audio: true, video: true},function (stream) {
             document.getElementById("yourVideo").srcObject = stream
         })
-        .then(function (stream) {
-            console.log(stream);
-            if(pc)
-                // pc.addStream(document.getElementById("yourVideo").srcObject);
-            console.log(document.getElementById("yourVideo").srcObject);
-
-        });
-
+    
 }

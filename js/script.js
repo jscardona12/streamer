@@ -72,7 +72,7 @@ function readMessage(data) {
 
 
 function stream(id) {
-    pc = new RTCPeerConnection(servers);
+    pc = new RTCPeerConnection(servers) || new webkitRTCPeerConnection(servers);
     pc.addStream(document.getElementById("yourVideo").srcObject);
 
     // pc.onicecandidate = (function (event) {
